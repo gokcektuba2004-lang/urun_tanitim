@@ -1,0 +1,298 @@
+:root {
+    --ana-renk: #7b0f1d;
+    --koyu-renk: #2b0509;
+    --altin-renk: #d6a84f;
+    --beyaz-renk: #ffffff;
+    --yazi-renk: #f8e8e8;
+    --kart-renk: rgba(255, 255, 255, 0.12);
+    --font-main: Arial, sans-serif;
+    --bosluk: 30px;
+    --radius: 20px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background: linear-gradient(135deg, var(--koyu-renk), var(--ana-renk));
+    color: var(--yazi-renk);
+}
+
+/* Fixed Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(43, 5, 9, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--bosluk);
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    color: var(--altin-renk);
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    color: var(--beyaz-renk);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--altin-renk);
+}
+
+/* Hero Alanı */
+.hero {
+    min-height: 100vh;
+    padding: 120px var(--bosluk) 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    position: relative;
+    background: var(--kart-renk);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    animation: glow 3s infinite alternate;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 380px;
+    max-width: 100%;
+    border-radius: var(--radius);
+}
+
+/* Absolute Badge */
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--altin-renk);
+    color: var(--koyu-renk);
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    color: var(--altin-renk);
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--altin-renk);
+    color: var(--koyu-renk);
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--beyaz-renk);
+    transform: translateY(-5px);
+}
+
+/* Sticky Bölüm */
+.story {
+    display: flex;
+    gap: 40px;
+    padding: 90px var(--bosluk);
+}
+
+.sticky-box {
+    position: sticky;
+    top: 90px;
+    height: fit-content;
+    background-color: var(--altin-renk);
+    color: var(--koyu-renk);
+    padding: 20px;
+    border-radius: var(--radius);
+    font-weight: bold;
+    min-width: 180px;
+}
+
+.content {
+    max-width: 750px;
+}
+
+.content h2,
+.features h2 {
+    color: var(--altin-renk);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Kartlar */
+.features {
+    padding: 80px var(--bosluk);
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background: var(--kart-renk);
+    padding: 30px;
+    width: 280px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.card h3 {
+    color: var(--altin-renk);
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--koyu-renk);
+    text-align: center;
+    padding: 30px;
+    color: var(--beyaz-renk);
+}
+
+/* Animation */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px rgba(214, 168, 79, 0.3);
+    }
+    to {
+        box-shadow: 0 0 45px rgba(214, 168, 79, 0.8);
+    }
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    .navbar ul {
+        margin-top: 10px;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding-top: 150px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 34px;
+    }
+
+    .story {
+        flex-direction: column;
+    }
+
+    .sticky-box {
+        top: 120px;
+    }
+}
+@media (max-width: 480px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 140px 20px 60px;
+    }
+
+    .product-card img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .hero-text h1 {
+        font-size: 26px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
